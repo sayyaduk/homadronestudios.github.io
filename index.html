@@ -1,206 +1,130 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homa Drone Studios — Aerial Videography</title>
-  <meta name="description" content="Aerial videography, photography and simple cinematic editing — Shoreham-by-Sea." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homa Drone Studios</title>
+  <meta name="description" content="Aerial videography and photography with drones - Homa Drone Studios." />
+  <meta property="og:title" content="Homa Drone Studios" />
+  <meta property="og:description" content="Creative aerial videography and photography." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://homadronestudios.co.uk/" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
   <style>
-    :root{--bg:#071021;--card:#0e1724;--muted:#9aa4b2;--accent:#22d3ee;--accent2:#a78bfa;--radius:12px;--max:1100px}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:linear-gradient(180deg,#041226 0%,#071021 70%); color:#ecf6ff}
-    a{color:inherit}
-    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;background:rgba(3,7,12,.45);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,.02);z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:40px;height:40px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 8px 24px rgba(0,0,0,.5)}
-    .links{display:flex;gap:14px;align-items:center}
-    .links a{padding:8px 10px;border-radius:10px;color:var(--muted);font-weight:600}
-    .links a:hover{color:var(--accent)}
-    .cta{background:linear-gradient(90deg,var(--accent),var(--accent2));padding:8px 12px;border-radius:10px;font-weight:700}
-
-    /* Hero */
-    .hero{padding:72px 0}
-    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));padding:28px;border-radius:16px;border:1px solid rgba(255,255,255,.03)}
-    h1{font-size:34px;margin:0 0 8px}
-    .lead{color:var(--muted);margin:0}
-    .actions{display:flex;gap:12px;margin-top:18px}
-    .btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.04);background:transparent}
-
-    /* Floating hero visual (subtle drone-like float) */
-    .visual{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.04)}
-    .visual img{width:100%;height:100%;object-fit:cover;display:block;animation:floatY 6s ease-in-out infinite}
-    @keyframes floatY{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
-
-    /* Portfolio */
-    section{padding:48px 0}
-    .section-title{font-size:18px;margin-bottom:12px}
-    .grid{display:grid;gap:12px}
-    .portfolio{grid-template-columns:repeat(3,1fr)}
-    .thumb{position:relative;border-radius:10px;overflow:hidden;cursor:pointer}
-    .thumb img{width:100%;height:190px;object-fit:cover;transition:transform .35s}
-    .thumb:hover img{transform:scale(1.05)}
-    .label{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);padding:6px 10px;border-radius:8px}
-
-    /* Lightbox */
-    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.75);z-index:120}
-    .modal.open{display:flex}
-    .modal .inner{width:min(1100px,96%);background:var(--card);border-radius:10px;overflow:hidden}
-    .modal img,.modal video{width:100%;height:auto;display:block}
-
-    /* Contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
-    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.04);background:rgba(255,255,255,.02);color:inherit}
-
-    footer{padding:20px 0;border-top:1px solid rgba(255,255,255,.02);color:var(--muted)}
-
-    /* responsive */
-    @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.portfolio{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}}
-    @media(max-width:560px){.portfolio{grid-template-columns:1fr}}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f7f9fc;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white; padding: 15px 20px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    header h1 { margin: 0; font-size: 1.5rem; }
+    nav a {
+      color: white; text-decoration: none; margin-left: 15px;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+    .hero {
+      position: relative; text-align: center; color: white;
+    }
+    .hero img {
+      width: 100%; height: 80vh; object-fit: cover;
+      filter: brightness(65%);
+    }
+    .hero-text {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hero-text h2 { font-size: 2.5rem; margin: 0; }
+    .hero-text p { font-size: 1.2rem; }
+    section {
+      padding: 60px 20px; max-width: 1100px; margin: auto;
+    }
+    #gallery h2, #contact h2 { text-align: center; margin-bottom: 30px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item img, .gallery-item video {
+      width: 100%; border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    form {
+      display: flex; flex-direction: column;
+      max-width: 600px; margin: auto;
+    }
+    input, textarea {
+      margin: 10px 0; padding: 10px;
+      border-radius: 5px; border: 1px solid #ccc;
+    }
+    button {
+      padding: 12px; border: none; border-radius: 5px;
+      background: #203a43; color: white; font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover { background: #2c5364; }
+    footer {
+      background: #203a43; color: white;
+      text-align: center; padding: 20px;
+    }
+    footer a {
+      color: #fff; margin: 0 10px; text-decoration: none;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div style="font-weight:800">Homa Drone Studios</div>
-      </div>
-      <nav class="links" aria-label="Main navigation">
-        <a href="#portfolio">Portfolio</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        <a class="cta" href="mailto:homadronestudios@example.com">Get a Quote</a>
-      </nav>
-    </div>
+    <h1>Homa Drone Studios</h1>
+    <nav>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-card">
-          <div style="color:var(--muted);font-size:13px;margin-bottom:8px">Aerial — Cinematic — Clean</div>
-          <h1>Beautiful aerial footage, simply presented.</h1>
-          <p class="lead">Fast, professional drone video and photo services for property, events and promotional content. Based in Shoreham-by-Sea, serving Brighton and the South Coast.</p>
-          <div class="actions">
-            <a class="btn" href="#contact">Book a Shoot</a>
-            <a class="btn" href="#portfolio">View Portfolio</a>
-          </div>
-          <ul style="margin-top:14px;color:var(--muted);font-size:13px">
-            <li>Phone: <a href="tel:+447424545515">+44 7424 545515</a></li>
-            <li>Email: <a href="mailto:homadronestudios@example.com">homadronestudios@example.com</a></li>
-            <li>Instagram: <a href="https://instagram.com/homadronestudios" target="_blank">@homadronestudios</a></li>
-            <li>YouTube: <a href="https://youtube.com/@homadronestudios" target="_blank">homadronestudios</a></li>
-          </ul>
-        </div>
-        <div class="visual">
-          <!-- Replace the image below with your hero photo/video. A subtle vertical float animation simulates gentle drone motion. -->
-          <img src="assets/hero.jpg" alt="Hero" />
-
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <h3 class="section-title">Services</h3>
-      <div class="grid portfolio services" style="grid-template-columns:repeat(3,1fr);margin-top:12px">
-        <div class="thumb" style="padding:16px">
-          <h4>Drone Videography</h4>
-          <p class="muted">4K cinematic captures for properties, ads and events.</p>
-        </div>
-        <div class="thumb" style="padding:16px">
-          <h4>Editing & Color</h4>
-          <p class="muted">Professional cuts, color grade and final deliverables.</p>
-        </div>
-        <div class="thumb" style="padding:16px">
-          <h4>Photo & Stills</h4>
-          <p class="muted">High-res aerial and ground photography for web and socials.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio">
-      <h3 class="section-title">Portfolio</h3>
-      <p class="muted">Click any item to open — images or short demo clips.</p>
-      <div class="grid portfolio" style="margin-top:12px;grid-template-columns:repeat(3,1fr)">
-        <!-- To replace portfolio items: edit data-src to point to your image or video file. Use video by setting data-type="video" and a .mp4 URL. -->
-        <div class="thumb" data-type="image" data-src="https://images.unsplash.com/photo-1520975922284-9d1456c2ce85?q=80&w=1600&auto=format&fit=crop">
-          <img src="https://images.unsplash.com/photo-1520975922284-9d1456c2ce85?q=80&w=600&auto=format&fit=crop" alt="Coastal" />
-          <div class="label">Coastal view</div>
-        </div>
-        <div class="thumb" data-type="image" data-src="https://images.unsplash.com/photo-1467348733814-f93fc480bec6?q=80&w=1600&auto=format&fit=crop">
-          <img src="https://images.unsplash.com/photo-1467348733814-f93fc480bec6?q=80&w=600&auto=format&fit=crop" alt="Estate" />
-          <div class="label">Property showcase</div>
-        </div>
-        <div class="thumb" data-type="video" data-src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4">
-          <img src="https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?q=80&w=600&auto=format&fit=crop" alt="Event" />
-          <div class="label">Event demo (video)</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Lightbox -->
-    <div id="lightbox" class="modal" aria-hidden="true">
-      <div class="inner">
-        <div id="mediaWrap"></div>
-        <div style="padding:12px;display:flex;justify-content:flex-end">
-          <button id="closeModal" style="padding:8px 10px;border-radius:8px">Close</button>
-        </div>
-      </div>
+  <!-- Hero Section -->
+  <div class="hero">
+    <!-- اگر فایل hero.jpg رو توی assets گذاشتی -->
+    <img src="assets/hero.jpg" alt="Aerial drone view" 
+         onerror="this.src='https://images.unsplash.com/photo-1508615039623-a25605d2b022?w=1600';" />
+    <div class="hero-text">
+      <h2>Creative Drone Videography</h2>
+      <p>Capturing stunning aerial perspectives</p>
     </div>
+  </div>
 
-    <section id="contact">
-      <h3 class="section-title">Contact</h3>
-      <p class="muted">For pricing or booking, use the form or contact directly via phone or Instagram.</p>
-      <div class="contact-grid" style="margin-top:12px">
-        <form action="mailto:homadronestudios@example.com" method="post" enctype="text/plain" class="hero-card">
-          <input name="name" placeholder="Full name" required />
-          <input name="email" type="email" placeholder="Email" required />
-          <input name="phone" placeholder="Phone (optional)" />
-          <textarea name="message" placeholder="Brief description of your project" required></textarea>
-          <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:8px">
-            <button type="reset" class="btn">Reset</button>
-            <button type="submit" class="btn" style="background:linear-gradient(90deg,var(--accent),var(--accent2));">Send</button>
-          </div>
-        </form>
-        <aside class="hero-card" style="padding:18px">
-          <h4>Contact Info</h4>
-          <p class="muted">Phone: <a href="tel:+447424545515">+44 7424 545515</a></p>
-          <p class="muted">Instagram: <a href="https://instagram.com/homadronestudios" target="_blank">@homadronestudios</a></p>
-          <p class="muted">YouTube: <a href="https://youtube.com/@homadronestudios" target="_blank">homadronestudios</a></p>
-        </aside>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="container">
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;color:var(--muted)">
-      <div>© <span id="year"></span> Homa Drone Studios</div>
-      <div>Built by Amir — edit on GitHub</div>
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="assets/photo1.jpg" alt="Drone Shot 1"></div>
+      <div class="gallery-item"><img src="assets/photo2.jpg" alt="Drone Shot 2"></div>
+      <div class="gallery-item"><video controls><source src="assets/video1.mp4" type="video/mp4"></video></div>
     </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" placeholder="Your message" rows="6" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p style="text-align:center;margin-top:20px;">
+      <a href="https://www.instagram.com/homdoronestudios" target="_blank">Instagram</a> | 
+      <a href="https://www.youtube.com/@homdoronestudios" target="_blank">YouTube</a> | 
+      <a href="tel:+447424545515">+44 7424 545515</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Homa Drone Studios</p>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Lightbox
-    const thumbs = document.querySelectorAll('.thumb');
-    const lightbox = document.getElementById('lightbox');
-    const mediaWrap = document.getElementById('mediaWrap');
-    thumbs.forEach(t => t.addEventListener('click', () => {
-      const type = t.dataset.type; const src = t.dataset.src;
-      mediaWrap.innerHTML = '';
-      if(type === 'video'){
-        const v = document.createElement('video'); v.src = src; v.controls = true; v.autoplay = true; mediaWrap.appendChild(v);
-      } else {
-        const img = document.createElement('img'); img.src = src; img.alt = '' ; mediaWrap.appendChild(img);
-      }
-      lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden','false');
-    }));
-    document.getElementById('closeModal').addEventListener('click', () => { lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); mediaWrap.innerHTML = ''; });
-    lightbox.addEventListener('click', (e) => { if(e.target === lightbox) { lightbox.classList.remove('open'); mediaWrap.innerHTML = ''; } });
-  </script>
 </body>
 </html>
